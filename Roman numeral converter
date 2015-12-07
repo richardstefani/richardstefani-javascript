@@ -1,0 +1,18 @@
+//Roman numeral converter
+
+function convert(num) {
+    var result = '',
+        ref = ['M','CM','D','CD','C','XC','L','XL','X','IX','V','IV','I'];
+        xis = [1000,900,500,400,100,90,50,40,10,9,5,4,1];
+
+
+for (x = 0; x < ref.length; x++){    //iterate through ref array
+        while(num >= xis[x]){        //while num is greater than or equal to the array..
+            result += ref[x];        //..element then append the equalivalent roman..
+            num -= xis[x];           //numeral to the result and subtract from num
+        }
+    }
+    return result;
+}
+
+convert(36);
